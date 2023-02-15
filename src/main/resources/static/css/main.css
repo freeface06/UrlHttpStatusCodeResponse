@@ -1,0 +1,74 @@
+body {
+	background: #1E1930;
+	color: #D2D1D5;
+}
+
+table {
+	text-align: center;
+	width: 100%;
+}
+
+label {
+	width: 23%;
+}
+
+input {
+	width: 70%;
+}
+
+tr:nth-child(even) {
+	background-color: #2e2649;
+}
+
+tr:nth-child(odd) {
+	background-color: #423b5b;
+}
+
+th {
+	background-color: #342F44;
+	color: white;
+}
+
+td {
+	background-color: #342F44;
+	color: white;
+}
+
+.noBorder {
+	border: none !important;
+}
+
+.table_container {
+	margin: 0 10% 0 10%;
+}
+
+#---
+.filebox .upload-name {
+	display: inline-block;
+	height: 40px;
+	padding: 0 10px;
+	vertical-align: middle;
+	border: 1px solid #dddddd;
+	width: 78%;
+	color: #999999;
+}
+
+.filebox label {
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff;
+	vertical-align: middle;
+	background-color: #999999;
+	cursor: pointer;
+	height: 40px;
+	margin-left: 10px;
+}
+
+.filebox input[type="file"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+}
