@@ -30,7 +30,8 @@ public class ApiController {
 			conn = (HttpURLConnection) url.openConnection(); // 해당 url로 connection 객체 얻어옴
 
 			if (conn != null) {
-				conn.setConnectTimeout(2000); // 2초 이내 서버와 연결 수립이 안되면 예외 발생
+				conn.setConnectTimeout(1000);
+				conn.setReadTimeout(1000);
 
 				int responseCode = conn.getResponseCode();
 				code = responseCode;
