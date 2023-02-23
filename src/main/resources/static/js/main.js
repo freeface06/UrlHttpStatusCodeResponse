@@ -16,7 +16,6 @@ $("#file").on('change', function() {
 function go() {
 	var _promise = function() {
 		return new Promise(function() {
-			$("#status").show();
 			spinnerStart();
 
 			window.setTimeout(function() {
@@ -44,7 +43,6 @@ function readExcel() {
 
 			for (let i = 0; i < rows.length; i++) {
 				console.log(`${i + 1}/${rows.length}`);
-				$("#ing").text(`${i + 1}/${rows.length}`);
 
 				$.ajax({
 					type: "GET",
