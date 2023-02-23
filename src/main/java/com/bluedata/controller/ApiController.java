@@ -1,10 +1,7 @@
 package com.bluedata.controller;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -26,13 +23,6 @@ public class ApiController {
 		URL url = null;
 		HttpURLConnection conn = null;
 
-		InputStream in = null;
-		InputStreamReader reader = null;
-		BufferedReader br = null;
-
-		char[] buf = new char[512];
-		StringBuffer sb = new StringBuffer();
-
 		int code = 0;
 
 		try {
@@ -42,35 +32,13 @@ public class ApiController {
 			if (conn != null) {
 				conn.setConnectTimeout(2000); // 2초 이내 서버와 연결 수립이 안되면 예외 발생
 
-				conn.setRequestMethod("GET");
-				conn.addRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-				conn.setUseCaches(false);
-
-				conn.connect(); // request 발생
-
 				int responseCode = conn.getResponseCode();
 				code = responseCode;
-
-				if (responseCode == HttpURLConnection.HTTP_OK) {
-					in = conn.getInputStream();
-					reader = new InputStreamReader(in, "utf-8");
-					br = new BufferedReader(reader);
-
-					int cnt;
-					while ((cnt = br.read(buf)) != -1) {
-						sb.append(buf, 0, cnt);
-					}
-				} else {
-					return 0;
-				}
-
-			} else {
-				return 0;
 			}
 
 		} catch (Exception e) {
+			return 0;
 		}
-
 		return code;
 	}
 

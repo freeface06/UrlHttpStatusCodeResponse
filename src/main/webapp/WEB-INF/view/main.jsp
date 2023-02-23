@@ -77,7 +77,6 @@
 		</div>
 
 	</section>
-
 	<!-- The Modal -->
 	<div class="modal fade" id="modal" data-bs-backdrop="static">
 		<div class="modal-dialog">

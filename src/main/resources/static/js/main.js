@@ -16,6 +16,7 @@ $("#file").on('change', function() {
 function go() {
 	var _promise = function() {
 		return new Promise(function() {
+			$("#status").show();
 			spinnerStart();
 
 			window.setTimeout(function() {
@@ -42,6 +43,9 @@ function readExcel() {
 			let https_code;
 
 			for (let i = 0; i < rows.length; i++) {
+				console.log(`${i + 1}/${rows.length}`);
+				$("#ing").text(`${i + 1}/${rows.length}`);
+
 				$.ajax({
 					type: "GET",
 					dataType: "json",
@@ -99,8 +103,6 @@ function mod_open() {
 }
 
 function mod_close() {
-	//$(".upload-name").val('');
-	//$("#file_input").val('');
 	modal.hide();
 }
 
