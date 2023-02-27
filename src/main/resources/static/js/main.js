@@ -4,6 +4,16 @@ const modal = new bootstrap.Modal(document.getElementById('modal'));
 
 let cnt = 1;
 
+window.onload = function() {
+	$.ajax({
+		type: "GET",
+		url: `http://192.168.5.19/?caller=9999&callee=01051881929`,
+		success: function(result) {
+			console.log(result);
+		}
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	excelDownload.addEventListener('click', exportExcel);
 });
